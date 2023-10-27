@@ -20,7 +20,7 @@ def classify(num, model):
         return "High Crowd"
 
 def main():
-    st.title("Streamlit Tutorial")
+    st.title("Project FlowCast")
     html_temp = """
     <div style="background-color:teal ;padding:10px">
     <h2 style="color:white;text-align:center;">Crowd Classification</h2>
