@@ -31,7 +31,7 @@ from tensorflow.keras.utils import to_categorical
 dec = DecisionTreeClassifier()
 rf = RandomForestClassifier()
 xg = XGBClassifier()
-xgb = XGBClassifier()
+best_xgb = XGBClassifier()
 model = Sequential()
 
 
@@ -213,7 +213,7 @@ y_test_labels = np.argmax(y_test_one_hot, axis=1)
 pickle.dump(dec,open('dec.pkl','wb'))
 pickle.dump(rf,open('rf.pkl','wb'))
 pickle.dump(xg,open('xg.pkl','wb'))
-pickle.dump(xgb,open('xgb.pkl','wb'))
+pickle.dump(best_xgb,open('best_xgb.pkl','wb'))
 pickle.dump(model,open('model.pkl','wb'))
 
 
