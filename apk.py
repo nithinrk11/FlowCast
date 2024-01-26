@@ -77,7 +77,7 @@ def main():
             ax.imshow(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
             st.sidebar.markdown("<span style='font-size: 35px; font-weight: bold;'>Settings :gear:</span>", unsafe_allow_html=True)
             st.sidebar.divider()
-            st.sidebar.title("Video Info & Reference frame for polygon zone")
+            st.sidebar.title("Video Info & Reference frame for Detection Zone")
             
             st.sidebar.text(
                 f"Resolution: {video_info.width}x{video_info.height}px\n"
@@ -102,7 +102,7 @@ def main():
 
             # Check if the form is submitted
             if submit_button:
-                st.success("Polygon Zone Coordinates Updated!")
+                st.success("Detection Zone Updated!")
 
             colors = sv.ColorPalette.default()
             video_info = sv.VideoInfo.from_video_path(MALL_VIDEO_PATH)
@@ -251,11 +251,11 @@ def main():
 
                   max_count = max(low_crowd, moderate_crowd, high_crowd)
                   if max_count == low_crowd:
-                    container.warning('Low Crowd observed no additional services required')
+                    container.warning('Overall Observation: Low Crowd, no additional services required')
                   elif max_count == moderate_crowd:
-                    container.warning('Moderate Crowd detected , may consider ensuring proper services')
+                    container.warning('Overall Observation: Moderate Crowd, may consider ensuring proper services')
                   elif max_count == high_crowd:
-                    container.warning('High Crowd detected, additional management and services required!')
+                    container.warning('Overall Observation: High Crowd, additional management and services required!')
 
                   #Peak Hours
                   if 'Predicted_Crowd_Type' in result_df.columns:
