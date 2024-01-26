@@ -89,7 +89,7 @@ def main():
 
             # Initiate polygon zone
             with st.sidebar.form("update_zone_form"):
-                st.write("Update Polygon Zone Coordinates:")
+                st.write("Update Detection Zone Coordinates:")
                 labels = ['A', 'B', 'C', 'D']
                 for i in range(4):
                     st.write(f"Point {labels[i]}:")
