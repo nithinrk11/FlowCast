@@ -204,10 +204,10 @@ def main():
             if not df.empty:
 
                #Load the saved Random forest model from pickle file
-               with open('xgboost_tuned.pkl', 'rb') as model_file:
+               with open('rd.pkl', 'rb') as model_file:
                 loaded_model = pickle.load(model_file)
 
-            try:
+            
                 # Assume 'Crowd_Counts' is the column containing crowd count data
                 crowd_counts = df['Crowd_Counts'].values.reshape(-1, 1)
 
@@ -216,8 +216,6 @@ def main():
                 
 
                 # Create a new DataFrame with original data, predicted crowd types, and timestamp
-                #since Xgboost can only train & predict label encoded values,
-                #lets map and replace from encoded values from a temporary dataframe into another
                 r_df = pd.DataFrame({
                     'Predicted_Crowd_Type': predicted_crowd_types   
                 })
@@ -248,7 +246,7 @@ def main():
                   col1.write("Predicted Crowd Type DataFrame:")
                   col1.write(result_df)
                   col2.write(" Machine Learning Model For Processing:")
-                  col2.write("XGBoost with Hyperparameter Grid Search")
+                  col2.write("Random Forest")
 
 
                   max_count = max(low_crowd, moderate_crowd, high_crowd)
@@ -320,7 +318,7 @@ def main():
               </div>
               """
               st.markdown(html_temp, unsafe_allow_html=True)
-              st.info('The Project was Trained using XGBoost with Hyperparameter Grid Search model with Accuracy score 0.96 and Mean Square Error of 0.104')
+              st.info('The Project was Trained using Random Forest Model with Accuracy score 0.96 and F1 score of 0.94 ')
               df2 = pd.read_csv(github_csv, parse_dates=["Timestamp"])
               if not df2.empty:
                 with st.container():
