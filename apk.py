@@ -348,7 +348,7 @@ def main():
                   ax.set_title('Average Trend line')
                   ax.grid(True)
                   tab2.pyplot(fig)
-                  ##
+                
               else:
                   container.warning(f"Failed to retrieve data.")
 
