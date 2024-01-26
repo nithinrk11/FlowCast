@@ -308,8 +308,6 @@ def main():
                   plt.grid(True)
                   container.pyplot(plt)
 
-            except pd.errors.EmptyDataError:
-                st.warning("The CSV file is empty. Please upload a valid CSV file with data.")
             
             else:
               html_temp = """
