@@ -316,7 +316,6 @@ def main():
               </div>
               """
               st.markdown(html_temp, unsafe_allow_html=True)
-              st.info('The Project was Trained using Random Forest Model with Accuracy score 0.96 and F1 score of 0.94 ')
               df2 = pd.read_csv(github_csv, parse_dates=["Timestamp"])
               if not df2.empty:
                 with st.container():
