@@ -207,6 +207,8 @@ def main():
                with open('rd.pkl', 'rb') as model_file:
                 loaded_model = pickle.load(model_file)
 
+            try:    
+
             
                 # Assume 'Crowd_Counts' is the column containing crowd count data
                 crowd_counts = df['Crowd_Counts'].values.reshape(-1, 1)
@@ -290,7 +292,7 @@ def main():
 
                   else:    
                     container.warning('Error Loading Data')
-
+            
 
                 # Monthly Trend Line Chart
                 with st.container():
@@ -308,6 +310,8 @@ def main():
                   plt.grid(True)
                   container.pyplot(plt)
 
+            except pd.errors.EmptyDataError:
+              st.warning("The CSV file is empty. Please upload a valid CSV file with data.")
             
             else:
               html_temp = """
