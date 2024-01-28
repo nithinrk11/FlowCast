@@ -3,9 +3,6 @@ import torch
 import subprocess
 # Install required packages using subprocess
 subprocess.run(["pip", "install", "pandas", "ultralytics", "supervision==0.2.0"])
-# Install detectron2 from GitHub
-subprocess.run(["pip", "install", "git+https://github.com/facebookresearch/detectron2.git"])
-import detectron2
 import pandas as pd
 import numpy as np
 import supervision as sv
