@@ -147,7 +147,7 @@ def main():
           if i % frames_per_interval == 0:
             seconds = i / frames_per_second
             # Use time module to get the current timestamp only once
-            current_timestamp = datetime.datetime.now(pytz.timezone('Asia/Kolkata')).strftime("%Y-%m-%d %H:%M:%S")
+            #current_timestamp = datetime.datetime.now(pytz.timezone('Asia/Kolkata')).strftime("%Y-%m-%d %H:%M:%S")
 
             # Check if 3 seconds have elapsed to update the timestamp
             elapsed_time = time.time() - window_start_time
