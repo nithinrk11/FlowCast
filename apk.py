@@ -2,7 +2,7 @@ import streamlit as st
 import torch
 import subprocess
 # Install required packages using subprocess
-subprocess.run(["pip", "install", "pandas", "ultralytics", "supervision==0.2.0"])
+subprocess.run(["pip", "install", "pandas", "ultralytics", "supervision==0.20.0"])
 import pandas as pd
 import numpy as np
 import supervision as sv
